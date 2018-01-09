@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('routing App', () => {
+describe('data App', () => {
   let page: AppPage;
 
   beforeEach(() => {
