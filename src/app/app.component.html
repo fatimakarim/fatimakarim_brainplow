@@ -1,9 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div class="main">
   <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <a href="/members">Member</a>
-  <a href="/product">product</a>
-<br>
-<router-outlet></router-outlet>
-
+    item's list</h1>
+    <div class ="addItem">
+      <input [(ngModel)] = "newItems" placeholder="Add Item" class="addText">
+      <button (click)="pushItem()">Add</button>
+    </div>
+  <ul>
+    <li *ngFor="let i of Items">
+      {{i}}
+      <span>x</span>
+    </li>
+  </ul>
+</div>

@@ -6,12 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  obj={
-    id:"1",
-    name:"fatima"
+  Items = ["Angular 4", "react" , "underscore"];
+  newItems = "" ;
+  pushItem = function () {
+    if (this.newItems != "") {
+      this.Items.push(this.newItems);
+      this.newItems= "";
+    }
+
   }
-  arr=["aa","bb","cc"];
- isTrue = false;
- myName = "fatima"
 }
