@@ -6,13 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  Items = ["Angular 4", "react" , "underscore"];
-  newItems = "" ;
-  pushItem = function () {
-    if (this.newItems != "") {
-      this.Items.push(this.newItems);
-      this.newItems= "";
-    }
-
-  }
+  title = 'app';
 }

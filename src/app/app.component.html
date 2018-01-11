@@ -1,15 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="main">
+<div style="text-align:center">
   <h1>
-    item's list</h1>
-    <div class ="addItem">
-      <input [(ngModel)] = "newItems" placeholder="Add Item" class="addText">
-      <button (click)="pushItem()">Add</button>
-    </div>
-  <ul>
-    <li *ngFor="let i of Items">
-      {{i}}
-      <span>x</span>
-    </li>
-  </ul>
+    Welcome to {{ title }}!
+  </h1>
+  <a href="/home">home</a>
+  <a href="/about">about</a>
+  <a href="/contact-us">contact-us</a>
+  <br>
+  <router-outlet></router-outlet>
+
+
+
 </div>
