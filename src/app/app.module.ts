@@ -117,6 +117,9 @@ import { AppComponent } from './app.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
+<<<<<<< HEAD
+>>>>>>> 5bd8bb26a39218de067a253b34d0bedfeaacb427
+=======
 >>>>>>> 5bd8bb26a39218de067a253b34d0bedfeaacb427
 
 @NgModule({
