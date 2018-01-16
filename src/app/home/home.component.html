@@ -1,36 +1,731 @@
-<main role="main">
-
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-3" text align = "center">Welcome to Home </h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-    </div>
+<app-header></app-header>
+<div class="wrapper">
+  <div class="home-main">
+    <section class="bannerCarousel">
+      <!--<ngx-carousel [inputs]="carouselOne" class="">-->
+        <!--<ngx-item NgxCarouselItem>-->
+          <!--<img src="../../assets/img/home-4.jpg" alt="image description" />-->
+        <!--</ngx-item>-->
+        <!--<ngx-item NgxCarouselItem>-->
+          <!--<img src="../../assets/img/home-5.jpg" alt="image description" />-->
+        <!--</ngx-item>-->
+        <!--<ngx-item NgxCarouselItem>-->
+          <!--<img src="../../assets/img/home-6.jpg" alt="image description" />-->
+        <!--</ngx-item>-->
+        <!--<button NgxCarouselPrev class='leftRs buttons'>-->
+          <!--<i class="material-icons">keyboard_arrow_left</i>-->
+        <!--</button>-->
+        <!--<button NgxCarouselNext class='rightRs buttons'>-->
+          <!--<i class="material-icons">keyboard_arrow_right</i>-->
+        <!--</button>-->
+      <!--</ngx-carousel>-->
+      <div class="form-home">
+        <div class="container-fluid">
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-zip">
+            <div class="card">
+              <div class="card-header card-header-text" data-background-color="rose">
+                <h4 class="card-title">Compare Rates Now!</h4>
+              </div>
+              <div class="clearfix">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <mat-form-field>
+                      <input matInput placeholder="Promo Code" [formControl]="promo" [errorStateMatcher]="matcher" />
+                      <mat-error *ngIf="promo.hasError('pattern')">
+                        Numbers Only
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group label-floating">
+                    <mat-form-field>
+                      <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]=zipCode #zip name="zipCode" />
+                      <mat-error *ngIf="zip_code.hasError('pattern')">
+                        Numbers Only
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix">
+                <div class="col-md-6 pull-right text-right">
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-rose">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="choose-criteria">
+      <div class="container">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="material-icons">explore</i>
+              <h4>Residential</h4>
+              <p>Get premium quality service at great prices.</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-icons">polymer</i>
+              <h4>Commercial</h4>
+              <p>Proven solutions for a change.</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-icons">lock_open</i>
+              <h4>Member Login</h4>
+              <p>Bill Payments, Electricity usage, Historical data and more.</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="packages-holder">
+      <div class="container">
+        <h3 class="heading">Featured Plans</h3>
+        <!--<ngx-carousel [inputs]="carouselTwo" class="carouselTwo">-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<div class="card card-product">-->
+              <!--<div class="card-image" data-header-animation="true">-->
+                <!--<a href="#pablo">-->
+                  <!--<img class="img" src="../assets/img/card-2.jpeg">-->
+                <!--</a>-->
+              <!--</div>-->
+              <!--<div class="card-content">-->
+                <!--<h4 class="card-title">-->
+                  <!--<a href="#pablo">Cozy 5 Stars Apartment</a>-->
+                <!--</h4>-->
+                <!--<div class="card-description">-->
+                  <!--The place is close to Barceloneta Beach and bus stop just 2 min by walk and...-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="card-footer">-->
+                <!--<div class="price">-->
+                  <!--<h4>$899/night</h4>-->
+                <!--</div>-->
+                <!--<div class="stats pull-right">-->
+                  <!--<p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<div class="card card-product">-->
+              <!--<div class="card-image" data-header-animation="true">-->
+                <!--<a href="#pablo">-->
+                  <!--<img class="img" src="../assets/img/card-3.jpeg">-->
+                <!--</a>-->
+                <!--<div class="ripple-container"></div>-->
+              <!--</div>-->
+              <!--<div class="card-content">-->
+                <!--<h4 class="card-title">-->
+                  <!--<a href="#pablo">Office Studio</a>-->
+                <!--</h4>-->
+                <!--<div class="card-description">-->
+                  <!--The place is close to Metro Station and bus stop just 2 min by walk and near...-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="card-footer">-->
+                <!--<div class="price">-->
+                  <!--<h4>$1.119/night</h4>-->
+                <!--</div>-->
+                <!--<div class="stats pull-right">-->
+                  <!--<p class="category"><i class="material-icons">place</i> London, UK</p>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<div class="card card-product">-->
+              <!--<div class="card-image" data-header-animation="true">-->
+                <!--<a href="#pablo">-->
+                  <!--<img class="img" src="../assets/img/card-1.jpeg">-->
+                <!--</a>-->
+              <!--</div>-->
+              <!--<div class="card-content">-->
+                <!--<h4 class="card-title">-->
+                  <!--<a href="#pablo">Beautiful Castle</a>-->
+                <!--</h4>-->
+                <!--<div class="card-description">-->
+                  <!--The place is close to Metro Station and bus stop just 2 min by walk and near...-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="card-footer">-->
+                <!--<div class="price">-->
+                  <!--<h4>$459/night</h4>-->
+                <!--</div>-->
+                <!--<div class="stats pull-right">-->
+                  <!--<p class="category"><i class="material-icons">place</i> Milan, Italy</p>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<div class="card card-product">-->
+              <!--<div class="card-image" data-header-animation="true">-->
+                <!--<a href="#pablo">-->
+                  <!--<img class="img" src="../assets/img/card-3.jpeg">-->
+                <!--</a>-->
+                <!--<div class="ripple-container"></div>-->
+              <!--</div>-->
+              <!--<div class="card-content">-->
+                <!--<h4 class="card-title">-->
+                  <!--<a href="#pablo">Office Studio</a>-->
+                <!--</h4>-->
+                <!--<div class="card-description">-->
+                  <!--The place is close to Metro Station and bus stop just 2 min by walk and near...-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="card-footer">-->
+                <!--<div class="price">-->
+                  <!--<h4>$1.119/night</h4>-->
+                <!--</div>-->
+                <!--<div class="stats pull-right">-->
+                  <!--<p class="category"><i class="material-icons">place</i> London, UK</p>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<div class="card card-product">-->
+              <!--<div class="card-image" data-header-animation="true">-->
+                <!--<a href="#pablo">-->
+                  <!--<img class="img" src="../assets/img/card-2.jpeg">-->
+                <!--</a>-->
+              <!--</div>-->
+              <!--<div class="card-content">-->
+                <!--<h4 class="card-title">-->
+                  <!--<a href="#pablo">Cozy 5 Stars Apartment</a>-->
+                <!--</h4>-->
+                <!--<div class="card-description">-->
+                  <!--The place is close to Barceloneta Beach and bus stop just 2 min by walk and...-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="card-footer">-->
+                <!--<div class="price">-->
+                  <!--<h4>$899/night</h4>-->
+                <!--</div>-->
+                <!--<div class="stats pull-right">-->
+                  <!--<p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</ngx-item>-->
+          <!--<button NgxCarouselPrev class='leftRs buttons btn btn-rose btn-xs'>-->
+            <!--<i class="material-icons">keyboard_arrow_left</i>-->
+          <!--</button>-->
+          <!--<button NgxCarouselNext class='rightRs buttons btn btn-rose btn-xs'>-->
+            <!--<i class="material-icons">keyboard_arrow_right</i>-->
+          <!--</button>-->
+        <!--</ngx-carousel>-->
+        <div class="btn-holder">
+          <button type="button" class="btn btn-lg btn-rose">VIEW ALL PLANS <i class="material-icons">arrow_forward</i></button>
+        </div>
+      </div>
+    </section>
+    <section class="interest-area">
+      <div class="container">
+        <h3 class="text-center">Search By Area</h3>
+        <!--<ngx-carousel [inputs]="carouselThree" class="s-areaCarousel">-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-success">Abeline</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-primary">corpus christi</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-danger">dallas</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-info">ft. worth</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-danger">frisco</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-info">galveston</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-primary">grapevine</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-success">houston</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-danger">Irving</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-info">Katy</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-primary">laredo</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-success">midland</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-info">odessa</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-danger">plano</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-success">round rock</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-primary">spring</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-info">sugar land</button>-->
+          <!--</ngx-item>-->
+          <!--<ngx-item NgxCarouselItem>-->
+            <!--<button type="button" class="btn-danger">waco</button>-->
+          <!--</ngx-item>-->
+          <!--<button NgxCarouselPrev class='leftRs buttons'>-->
+            <!--<i class="material-icons">keyboard_arrow_left</i>-->
+          <!--</button>-->
+          <!--<button NgxCarouselNext class='rightRs buttons'>-->
+            <!--<i class="material-icons">keyboard_arrow_right</i>-->
+          <!--</button>-->
+        <!--</ngx-carousel>-->
+      </div>
+    </section>
+    <section class="in-your-area">
+      <div class="container">
+        <h3 class="text-center">Plans in your Area</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-product">
+              <div class="card-image" data-header-animation="true">
+                <a href="#pablo">
+                  <img class="img" src="../assets/img/card-2.jpeg">
+                </a>
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">
+                  <a href="#pablo">Cozy 5 Stars Apartment</a>
+                </h4>
+                <div class="card-description">
+                  The place is close to Barceloneta Beach and bus stop just 2 min by walk and...
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <h4>$899/night</h4>
+                </div>
+                <div class="stats pull-right">
+                  <p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-product">
+              <div class="card-image" data-header-animation="true">
+                <a href="#pablo">
+                  <img class="img" src="../assets/img/card-2.jpeg">
+                </a>
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">
+                  <a href="#pablo">Cozy 5 Stars Apartment</a>
+                </h4>
+                <div class="card-description">
+                  The place is close to Barceloneta Beach and bus stop just 2 min by walk and...
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <h4>$899/night</h4>
+                </div>
+                <div class="stats pull-right">
+                  <p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-product">
+              <div class="card-image" data-header-animation="true">
+                <a href="#pablo">
+                  <img class="img" src="../assets/img/card-2.jpeg">
+                </a>
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">
+                  <a href="#pablo">Cozy 5 Stars Apartment</a>
+                </h4>
+                <div class="card-description">
+                  The place is close to Barceloneta Beach and bus stop just 2 min by walk and...
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <h4>$899/night</h4>
+                </div>
+                <div class="stats pull-right">
+                  <p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card card-product">
+              <div class="card-image" data-header-animation="true">
+                <a href="#pablo">
+                  <img class="img" src="../assets/img/card-2.jpeg">
+                </a>
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">
+                  <a href="#pablo">Cozy 5 Stars Apartment</a>
+                </h4>
+                <div class="card-description">
+                  The place is close to Barceloneta Beach and bus stop just 2 min by walk and...
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <h4>$899/night</h4>
+                </div>
+                <div class="stats pull-right">
+                  <p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card card-product">
+              <div class="card-image" data-header-animation="true">
+                <a href="#pablo">
+                  <img class="img" src="../assets/img/card-2.jpeg">
+                </a>
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">
+                  <a href="#pablo">Cozy 5 Stars Apartment</a>
+                </h4>
+                <div class="card-description">
+                  The place is close to Barceloneta Beach and bus stop just 2 min by walk and...
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <h4>$899/night</h4>
+                </div>
+                <div class="stats pull-right">
+                  <p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card card-product">
+              <div class="card-image" data-header-animation="true">
+                <a href="#pablo">
+                  <img class="img" src="../assets/img/card-2.jpeg">
+                </a>
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">
+                  <a href="#pablo">Cozy 5 Stars Apartment</a>
+                </h4>
+                <div class="card-description">
+                  The place is close to Barceloneta Beach and bus stop just 2 min by walk and...
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <h4>$899/night</h4>
+                </div>
+                <div class="stats pull-right">
+                  <p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card card-product">
+              <div class="card-image" data-header-animation="true">
+                <a href="#pablo">
+                  <img class="img" src="../assets/img/card-2.jpeg">
+                </a>
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">
+                  <a href="#pablo">Cozy 5 Stars Apartment</a>
+                </h4>
+                <div class="card-description">
+                  The place is close to Barceloneta Beach and bus stop just 2 min by walk and...
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <h4>$899/night</h4>
+                </div>
+                <div class="stats pull-right">
+                  <p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col col-md-4">
+            <a href="#">
+              <div class="cover">
+                <img src="../../assets/img/card-1.jpeg" alt="image description" />
+              </div>
+              <div class="overlay">
+                <h4>Description about weekly plans</h4>
+                <ul>
+                  <li>Our point number one</li>
+                  <li>Our point number two</li>
+                </ul>
+                <p>Some description here. Lorum ipsum is the standard dummy text.</p>
+              </div>
+              <p>Weekly Plan</p>
+            </a>
+          </div>
+          <div class="col col-md-4">
+            <a href="#">
+              <div class="cover">
+                <img src="../../assets/img/card-2.jpeg" alt="image description" />
+              </div>
+              <div class="overlay">
+                <h4>Description about monthly plans</h4>
+                <ul>
+                  <li>Our point number one</li>
+                  <li>Our point number two</li>
+                </ul>
+                <p>Some description here. Lorum ipsum is the standard dummy text.</p>
+              </div>
+              <p>Monthly Plan</p>
+            </a>
+          </div>
+          <div class="col col-md-4">
+            <a href="#">
+              <div class="cover">
+                <img src="../../assets/img/card-3.jpeg" alt="image description" />
+              </div>
+              <div class="overlay">
+                <h4>Description about yearly plans</h4>
+                <ul>
+                  <li>Our point number one</li>
+                  <li>Our point number two</li>
+                </ul>
+                <p>Some description here. Lorum ipsum is the standard dummy text.</p>
+              </div>
+              <p>Yearly Plan</p>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-md-3">
+            <a href="#">
+              <div class="cover small">
+                <img src="../../assets/img/card-3.jpeg" alt="image description" />
+              </div>
+              <p>Area Plan 1</p>
+            </a>
+          </div>
+          <div class="col col-md-3">
+            <a href="#">
+              <div class="cover small">
+                <img src="../../assets/img/card-2.jpeg" alt="image description" />
+              </div>
+              <p>Area Plan 2</p>
+            </a>
+          </div>
+          <div class="col col-md-3">
+            <a href="#">
+              <div class="cover small">
+                <img src="../../assets/img/card-1.jpeg" alt="image description" />
+              </div>
+              <p>Area Plan 3</p>
+            </a>
+          </div>
+          <div class="col col-md-3">
+            <a href="#">
+              <div class="cover small">
+                <img src="../../assets/img/card-2.jpeg" alt="image description" />
+              </div>
+              <p>Area Plan 4</p>
+            </a>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <section class="desc-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>TEXAS ENERGY SERVICES</h2>
+            <p>Top quality and affordable</p>
+            <h2>CHOOSE PRICE, CHOOSE SERVICE</h2>
+            <p>You have the power to choose</p>
+            <h2>CHOOSE YOUR ENERGY LLC</h2>
+            <div class="btn-holder">
+              <button type="button" class="btn btn-rose btn-lg">VIEW PLANS
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pw-solutions">
+      <div class="container">
+        <h3 class="text-center">More About PlugExp</h3>
+        <ul class="fourcolumns">
+          <li>
+            <div class="holder">
+              <a href="#" class="img-holder">
+                <img src="../../assets/img/card-1.jpeg" alt="image description" />
+              </a>
+              <div class="txt-holder">
+                <p>Want to Save Money on your electric bill? Keep your eyes glued to our Energy Saving Tips page for the latest tips and tricks to cut down on your power bill!</p>
+              </div>
+              <div class="btn-holder">
+                <button type="button" class="btn btn-info btn-round">View Tips</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="holder">
+              <a href="#" class="img-holder">
+                <img src="../../assets/img/card-2.jpeg" alt="image description" />
+              </a>
+              <div class="txt-holder">
+                <p>Want to Save Money on your electric bill? Keep your eyes glued to our Energy Saving Tips page for the latest tips and tricks to cut down on your power bill!</p>
+              </div>
+              <div class="btn-holder">
+                <button type="button" class="btn btn-info btn-round">View Tips</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="holder">
+              <a href="#" class="img-holder">
+                <img src="../../assets/img/card-1.jpeg" alt="image description" />
+              </a>
+              <div class="txt-holder">
+                <p>Want to Save Money on your electric bill? Keep your eyes glued to our Energy Saving Tips page for the latest tips and tricks to cut down on your power bill!</p>
+              </div>
+              <div class="btn-holder">
+                <button type="button" class="btn btn-info btn-round">View Tips</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="holder">
+              <a href="#" class="img-holder">
+                <img src="../../assets/img/card-3.jpeg" alt="image description" />
+              </a>
+              <div class="txt-holder">
+                <p>Want to Save Money on your electric bill? Keep your eyes glued to our Energy Saving Tips page for the latest tips and tricks to cut down on your power bill!</p>
+              </div>
+              <div class="btn-holder">
+                <button type="button" class="btn btn-info btn-round">View Tips</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="holder icons red">
+              <a href="#" class="img-holder">
+                <i class="material-icons">home</i>
+              </a>
+              <h3>Our Company</h3>
+              <div class="txt-holder">
+                <p>Want to Save Money on your electric bill? Keep your eyes glued to our Energy Saving Tips page for the latest tips and tricks to cut down on your power bill!</p>
+              </div>
+              <div class="btn-holder">
+                <button type="button" class="btn btn-info btn-round">View More</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="holder icons purple">
+              <a href="#" class="img-holder">
+                <i class="material-icons">query_builder</i>
+              </a>
+              <h3>Save Time</h3>
+              <div class="txt-holder">
+                <p>Want to Save Money on your electric bill? Keep your eyes glued to our Energy Saving Tips page for the latest tips and tricks to cut down on your power bill!</p>
+              </div>
+              <div class="btn-holder">
+                <button type="button" class="btn btn-info btn-round">View More</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="holder icons pink">
+              <a href="#" class="img-holder">
+                <i class="material-icons">favorite</i>
+              </a>
+              <h3>With Care</h3>
+              <div class="txt-holder">
+                <p>Want to Save Money on your electric bill? Keep your eyes glued to our Energy Saving Tips page for the latest tips and tricks to cut down on your power bill!</p>
+              </div>
+              <div class="btn-holder">
+                <button type="button" class="btn btn-info btn-round">View More</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="holder icons green">
+              <a href="#" class="img-holder">
+                <i class="material-icons">account_balance</i>
+              </a>
+              <h3>Account</h3>
+              <div class="txt-holder">
+                <p>Want to Save Money on your electric bill? Keep your eyes glued to our Energy Saving Tips page for the latest tips and tricks to cut down on your power bill!</p>
+              </div>
+              <div class="btn-holder">
+                <button type="button" class="btn btn-info btn-round">View More</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="success-for-business">
+      <div class="container">
+        <h2 class="text-center"><strong>Success</strong> for your Business</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <article class="icon-box">
+              <i class="material-icons">wb_sunny</i>
+              <h4>Better Planning</h4>
+              <p>We take the time to understand your needs by analyzing your previous energy consumption. This enables us to propose short and long term solutions.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="icon-box">
+              <i class="material-icons">blur_on</i>
+              <h4>Better Business</h4>
+              <p>Our energy market experts pre-purchase bulk volumes of electricity at the lowest rates.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="icon-box">
+              <i class="material-icons">trending_down</i>
+              <h4>Reduce Business Cost</h4>
+              <p>Pay lower energy rates! We deliver affordable electricity prices which translate to substantial energy savings.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-    </div>
-
-    <hr>
-
-  </div> <!-- /container -->
-
-</main>
+</div>
+<app-footer-cmp></app-footer-cmp>

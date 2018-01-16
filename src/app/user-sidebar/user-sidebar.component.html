@@ -1,0 +1,125 @@
+<div class="sidebar-user">
+  <nav>
+    <ul>
+      <li>
+        <div class="text-center">
+          <button type="button" class="btn btn-rose" (click)="fetchProducts()"   > Search <i class="material-icons">search</i></button>
+        </div>
+      </li>
+      <li>
+        <h5>Enter Zip Code</h5>
+        <div class="form-group label-floating">
+          <label class="control-label">Your Zip Code</label>
+          <input  type="text" class="form-control" [(ngModel)]="zip_code" name="zipcode" >
+        </div>
+      </li>
+      <li>
+        <h5>Estimated Usage</h5>
+        <mat-select placeholder="Usage" (ngModelChange)="check($event)" [(ngModel)]="eUsage" >
+          <mat-option value="1000">1,001 - 2,000 kWh</mat-option>
+          <mat-option value="2000">2,001 - 3,000 kWh</mat-option>
+          <mat-option value="3000">3,001 - 4,000 kWh</mat-option>
+        </mat-select>
+      </li>
+      <li>
+        <h5>Custom Usage</h5>
+        <div class="form-group label-floating">
+          <label class="control-label">Add Custom Usage</label>
+          <input type="text" class="form-control">
+        </div>
+      </li>
+      <li>
+        <h5>Contract Length</h5>
+        <mat-select placeholder="Usage" (ngModelChange)="check($event)" [(ngModel)]="eUsage">
+          <mat-option *ngFor="let x of usage" [value]="x.value">
+              
+
+            {{ x.viewValue }}
+          </mat-option>
+        </mat-select>
+      </li>
+      <li>
+        <h5>Pricing and Billing</h5>
+        <div class="radio">
+          <label>
+            <input type="radio" name="pricing-billing" checked>
+            Show All Plans
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="pricing-billing">
+            Plans without minimum usage Fee/Credits
+          </label>
+        </div>
+      </li>
+      <li>
+        <h5>Plan Type</h5>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="planType">
+            Fixed Rate
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="planType">
+            Variable <small>(changing rate)</small>
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="planType">
+            Indexed <small>(market rate)</small>
+          </label>
+        </div>
+      </li>
+      <li>
+        <h5>Prepaid Plans</h5>
+        <div class="radio">
+          <label>
+            <input type="radio" name="prepaidPlans" checked="true">
+            Show All Plans
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="prepaidPlans">
+            Show only Prepaid Plans
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="prepaidPlans">
+            Do not show Prepaid Plans
+          </label>
+        </div>
+      </li>
+      <li>
+        <h5>Time of Use Plans</h5>
+        <div class="radio">
+          <label>
+            <input type="radio" name="timeOfUse" checked="true">
+            Show All Plans
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="timeOfUse">
+            Show only Time Of Use Plans
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="timeOfUse">
+            Do not show Time Of Use Plans
+          </label>
+        </div>
+      </li>
+      <!-- <li>
+        <h5>Ranging from</h5>
+        <mat-slider thumbLabel min="0" max="100" step="5" value="0"></mat-slider>
+      </li> -->
+    </ul>
+  </nav>
+</div>
