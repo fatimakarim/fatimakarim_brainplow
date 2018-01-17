@@ -13,6 +13,7 @@ import { DataService } from '../data.service';
 })
 export class UserSidebarComponent implements OnInit {
   eUsage;
+  months;
   cUsage;
   message: string;
   constructor(private http: Http, private route: ActivatedRoute, private sg: SimpleGlobal, private data: DataService) { }
@@ -36,44 +37,56 @@ export class UserSidebarComponent implements OnInit {
   ];
   check(e) {
     // this.route.params.subscribe(params => {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    this.http.get(Config.api + '/price_range/price_' + e + '_kwh/5.6/6.1/' + this.zip_code + '/', { headers: headers })
-      .subscribe(Res => {
-        this.sg['products'] = Res.json()['Results'];
-        this.data.changeProducts(this.sg['products']);
+    // let headers = new Headers();
+    // headers.append('Content-Type', 'application/json');
+    // this.http.get(Config.api + '/price_range/price_' + e + '_kwh/5.6/6.1/' + this.zip_code + '/', { headers: headers })
+    //   .subscribe(Res => {
+    //     this.sg['products'] = Res.json()['Results'];
+    //     this.data.changeProducts(this.sg['products']);
 
-      });
-    //  }); 
+    //   });
+    // //  }); 
 
   }
   fetchProducts() {
     // this.route.params.subscribe(params => {
-    //  let zip =  this.sg['product_zipcode'];
+   //   let zip =  this.sg['product_zipcode'];
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers })
+    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
       .subscribe(Res => {
         this.sg['products'] = Res.json()['Results'];
         this.data.changeProducts(this.sg['products']);
-
-      });
+          
+     });
+  
+  //   .subscribe(Res => {
+  //     this.sg['products'] = Res.json()['Results'];
+  //     this.data.changeProducts(this.sg['products']);
+      
+      
+  //  }
+  
+  
+  //);
     //  }); 
 
   }///filter/75001
-  fetchProductsandplan() {
+  //fetchProductsandplan() {
     // this.route.params.subscribe(params => {
     //  let zip =  this.sg['product_zipcode'];
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    this.http.get(Config.api + 'filter/' + this.zip_code + '', { headers: headers })
-      .subscribe(Res => {
-        this.sg['products'] = Res.json()['Results'];
-        this.data.changeProducts(this.sg['products']);
+  //  let headers = new Headers();
+  //  headers.append('Content-Type', 'application/json');
+  //  this.http.get(Config.api + 'filter/' + this.zip_code + '', { headers: headers })
+   //   .subscribe(Res => {
+      //  this.sg['products'] = Res.json()['Results'];
+    //    this.data.changeProducts(this.sg['products']);
 
-      });
+    //  });
     //  }); 
 
-  }
+  
+
 
 }

@@ -3,7 +3,7 @@
     <ul>
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)="fetchProducts()"   > Search <i class="material-icons">search</i></button>
+          <button type="button" class="btn btn-rose" (click)="fetchProducts()"  > Search <i class="material-icons">search</i></button>
         </div>
       </li>
       <li>
@@ -30,23 +30,28 @@
       </li>
       <li>
         <h5>Contract Length</h5>
-        <mat-select placeholder="Usage" (ngModelChange)="check($event)" >
-          <mat-option *ngFor="let x of usage" [value]="x.value">
+        <mat-select placeholder="Usage" (ngModelChange)="check($event)" [(ngModel)]="months" >
+            <mat-option value="3">3 Months</mat-option>
+            <mat-option value="6">6 Months</mat-option>
+            <mat-option value="12">12 Months</mat-option>
+            <mat-option value="18">18 Months</mat-option>
+            <mat-option value="24">24 Months</mat-option>
+          <!-- <mat-option *ngFor="let x of usage" [value]="x.value">
             {{ x.viewValue }}
-          </mat-option>
+          </mat-option> -->
         </mat-select>
       </li>
       <li>
         <h5>Pricing and Billing</h5>
         <div class="radio">
           <label>
-            <input type="radio" name="pricing-billing_showplan" checked [(ngModel)]="pricing_billing" name="pricing_billing">
+            <input type="radio" name="pricingbiling"  checked="true"  (ngModelChange)="check($event)"  >
             Show All Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="pricingbilling_plan">
+            <input type="radio" name="pricingbiling" (ngModelChange)="check($event)">
             Plans without minimum usage Fee/Credits
           </label>
         </div>
@@ -55,19 +60,19 @@
         <h5>Plan Type</h5>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="planType_fixedRate"  [(ngModel)]="Plan_Type" name="Plan_Type">
+            <input type="checkbox" name="planType_fixedRate"(ngModelChange)="check($event)">
             Fixed Rate
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="planType_variable"   [(ngModel)]="Plan_Type" name="Plan_Type">
+            <input type="checkbox" name="planType_variable"   (ngModelChange)="check($event)">
             Variable <small>(changing rate)</small>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="planType_Indexed" [(ngModel)]="Plan_Type" name="Plan_Type">
+            <input type="checkbox" name="planType_Indexed"(ngModelChange)="check($event)">
             Indexed <small>(market rate)</small>
           </label>
         </div>
@@ -76,19 +81,19 @@
         <h5>Prepaid Plans</h5>
         <div class="radio">
           <label>
-            <input type="radio" name="prepaidPlans" checked="true" [(ngModel)]="Prepaid_Plans" name="Prepaid_Plans">
+            <input type="radio" name="prepaidPlans" checked="true" (ngModelChange)="check($event)">
             Show All Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="prepaidPlans" [(ngModel)]="Prepaid_Plans" name="Prepaid_Plans">
+            <input type="radio" name="prepaidPlans"(ngModelChange)="check($event)">
             Show only Prepaid Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="prepaidPlans"[(ngModel)]="Prepaid_Plans" name="Prepaid_Plans">
+            <input type="radio" name="prepaidPlans"(ngModelChange)="check($event)">
             Do not show Prepaid Plans
           </label>
         </div>
@@ -97,19 +102,19 @@
         <h5>Time of Use Plans</h5>
         <div class="radio">
           <label>
-            <input type="radio" name="timeOfUse" checked="true"[(ngModel)]="Time_of_Use_Plans" name="Time_of_Use_Plans">
+            <input type="radio" name="timeOfUse" checked="true" (ngModelChange)="check($event)">
             Show All Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="timeOfUse" checked="true"[(ngModel)]="Time_of_Use_Plans" name="Time_of_Use_Plans">
+            <input type="radio" name="timeOfUse"(ngModelChange)="check($event)">
             Show only Time Of Use Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="timeOfUse" checked="true"[(ngModel)]="Time_of_Use_Plans" name="Time_of_Use_Plans">
+            <input type="radio" name="timeOfUse" (ngModelChange)="check($event)">
             Do not show Time Of Use Plans
           </label>
         </div>

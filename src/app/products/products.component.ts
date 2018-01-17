@@ -40,7 +40,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         this.data.currentProducts.subscribe(products => this.sg['products']  = products)
 
-        alert("i am here")
+       // alert("i am here")
         this.sub = this.route.params.subscribe(params => {
             this.zip = +params['zipCode'];
             this.sg['product_zipcode']=this.zip;

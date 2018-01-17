@@ -15,21 +15,26 @@
                             </div>
                             <div class="card-content">
                                 <div class="col-sm-6 plan-detail">
-                                    <p>Save 50% off your energy charges all winter and summer long. The term regulatory state refers to the expansion in the use of rule making, monitoring and enforcement techniques and institutions by the state and to a parallel change in the way its positive functions in society are being carried out.</p>
+                                    <p>{{data.plan_information}}</p>
                                 </div>
-                                <div class="col-md-2 col-sm-3 col-xs-5 rate">
-                                    <strong>$ {{data.display_rate}}</strong>
-                                    <small>{{data.display_uom}}</small>
-                                    <br />
-                                    <h5><b>Estimated Bill</b></h5>
-                                    <small><b>$69.99</b></small>
+                                <div class="col-md-3 col-sm-3 col-xs-5 rate">
+                                        <h3><b>Plan</b></h3>
+                                    <h4> {{data.price_rate}}</h4>
+                                    <!-- <small>{{data.display_uom}}</small> -->
+                                    <!-- <br /> -->
+                                    
+                                    <!-- <small><b>$69.99 </b></small> -->
                                 </div>
                                 <div class="col-md-2 col-sm-3 col-xs-7 term">
-                                    <h3>{{data.display_term}} Months</h3>
+                                    
+                                    <h4>{{data.cancelation_fee}}</h4>
+                                   
+                                    <h4>Call now</h4>
+                                    <h4>{{data.phone}}</h4>
                                 </div>
                                 <div class="col-md-2 col-sm-3 col-xs-7 term top-margin-25">
                                     <!--(click)="signUp(data.product_id)"-->
-                                    <button class="btn btn-rose" (click)="openDialog(data.product_id)">Sign Up
+                                    <button class="btn btn-rose" (click)="openDialog(data.sign_up)">Sign Up
                                         <i class="material-icons">bubble_chart</i></button>
                                 </div>
                                 <div class="col-sm-12">
@@ -51,7 +56,7 @@
                                     <h5>Plan Documents</h5>
                                     <ul class="list-normal">
                                         <li>
-                                            <a routerLink="" href="{{data.TOS_url}}" target="_blank">
+                                            <a routerLink="" href="{{data.terms_of_service}}" target="_blank">
                                                 <i class="material-icons">picture_as_pdf</i>
                                                 ToS Agreement
                                             </a>
@@ -63,7 +68,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{data.EFL_url}}" target="_blank">
+                                            <a href="{{data.terms_of_service}}" target="_blank">
                                                 <i class="material-icons">picture_as_pdf</i>
                                                 Electricity Facts Label
                                             </a>
