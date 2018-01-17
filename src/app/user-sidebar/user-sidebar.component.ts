@@ -13,6 +13,7 @@ import { DataService } from '../data.service';
 })
 export class UserSidebarComponent implements OnInit {
   eUsage;
+  cUsage;
   message: string;
   constructor(private http: Http, private route: ActivatedRoute, private sg: SimpleGlobal, private data: DataService) { }
   zip_code;
@@ -52,6 +53,20 @@ export class UserSidebarComponent implements OnInit {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers })
+      .subscribe(Res => {
+        this.sg['products'] = Res.json()['Results'];
+        this.data.changeProducts(this.sg['products']);
+
+      });
+    //  }); 
+
+  }///filter/75001
+  fetchProductsandplan() {
+    // this.route.params.subscribe(params => {
+    //  let zip =  this.sg['product_zipcode'];
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    this.http.get(Config.api + 'filter/' + this.zip_code + '', { headers: headers })
       .subscribe(Res => {
         this.sg['products'] = Res.json()['Results'];
         this.data.changeProducts(this.sg['products']);

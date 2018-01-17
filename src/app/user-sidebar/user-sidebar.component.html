@@ -25,15 +25,13 @@
         <h5>Custom Usage</h5>
         <div class="form-group label-floating">
           <label class="control-label">Add Custom Usage</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control"[(ngModel)]="Custom_Usage" name="Custom_Usage">
         </div>
       </li>
       <li>
         <h5>Contract Length</h5>
-        <mat-select placeholder="Usage" (ngModelChange)="check($event)" [(ngModel)]="eUsage">
+        <mat-select placeholder="Usage" (ngModelChange)="check($event)" >
           <mat-option *ngFor="let x of usage" [value]="x.value">
-              
-
             {{ x.viewValue }}
           </mat-option>
         </mat-select>
@@ -42,13 +40,13 @@
         <h5>Pricing and Billing</h5>
         <div class="radio">
           <label>
-            <input type="radio" name="pricing-billing" checked>
+            <input type="radio" name="pricing-billing_showplan" checked [(ngModel)]="pricing_billing" name="pricing_billing">
             Show All Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="pricing-billing">
+            <input type="radio" name="pricingbilling_plan">
             Plans without minimum usage Fee/Credits
           </label>
         </div>
@@ -57,19 +55,19 @@
         <h5>Plan Type</h5>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="planType">
+            <input type="checkbox" name="planType_fixedRate"  [(ngModel)]="Plan_Type" name="Plan_Type">
             Fixed Rate
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="planType">
+            <input type="checkbox" name="planType_variable"   [(ngModel)]="Plan_Type" name="Plan_Type">
             Variable <small>(changing rate)</small>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="planType">
+            <input type="checkbox" name="planType_Indexed" [(ngModel)]="Plan_Type" name="Plan_Type">
             Indexed <small>(market rate)</small>
           </label>
         </div>
@@ -78,19 +76,19 @@
         <h5>Prepaid Plans</h5>
         <div class="radio">
           <label>
-            <input type="radio" name="prepaidPlans" checked="true">
+            <input type="radio" name="prepaidPlans" checked="true" [(ngModel)]="Prepaid_Plans" name="Prepaid_Plans">
             Show All Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="prepaidPlans">
+            <input type="radio" name="prepaidPlans" [(ngModel)]="Prepaid_Plans" name="Prepaid_Plans">
             Show only Prepaid Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="prepaidPlans">
+            <input type="radio" name="prepaidPlans"[(ngModel)]="Prepaid_Plans" name="Prepaid_Plans">
             Do not show Prepaid Plans
           </label>
         </div>
@@ -99,19 +97,19 @@
         <h5>Time of Use Plans</h5>
         <div class="radio">
           <label>
-            <input type="radio" name="timeOfUse" checked="true">
+            <input type="radio" name="timeOfUse" checked="true"[(ngModel)]="Time_of_Use_Plans" name="Time_of_Use_Plans">
             Show All Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="timeOfUse">
+            <input type="radio" name="timeOfUse" checked="true"[(ngModel)]="Time_of_Use_Plans" name="Time_of_Use_Plans">
             Show only Time Of Use Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="timeOfUse">
+            <input type="radio" name="timeOfUse" checked="true"[(ngModel)]="Time_of_Use_Plans" name="Time_of_Use_Plans">
             Do not show Time Of Use Plans
           </label>
         </div>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { RouterModule } from '@angular/router';
@@ -105,22 +104,6 @@ import { DataService } from './data.service';
 
 })
 export class MaterialModule {}
-=======
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
-import { HttpModule} from '@angular/http';
-import { RouterModule} from '@angular/router';
-import { AppComponent } from './app.component';
-
-
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { HomeComponent } from './home/home.component';
-<<<<<<< HEAD
->>>>>>> 5bd8bb26a39218de067a253b34d0bedfeaacb427
-=======
->>>>>>> 5bd8bb26a39218de067a253b34d0bedfeaacb427
 
 @NgModule({
   imports: [
@@ -144,7 +127,6 @@ import { HomeComponent } from './home/home.component';
     NormalLayoutComponent,
     AuthLayoutComponent,
     HomeComponent,
-<<<<<<< HEAD
     HeaderComponent,
     UserSidebarComponent,
     AboutComponent,
@@ -157,43 +139,5 @@ import { HomeComponent } from './home/home.component';
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]
-=======
-    ContactUsComponent,
-    AboutUsComponent,
-    
-
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'about-us',
-        component:AboutUsComponent
-
-      },
-     
-      {
-        path: 'contact-us',
-        component:ContactUsComponent
-      },
-     
-      {
-        path: 'home',
-        component:HomeComponent
-      },
-      {
-        path: '',
-        component:HomeComponent
-      },
-    ])
-  ],
-  
-  providers: [ ],
-  bootstrap : [AppComponent]
->>>>>>> 5bd8bb26a39218de067a253b34d0bedfeaacb427
 })
-
-export class AppModule{}
-
+export class AppModule { }

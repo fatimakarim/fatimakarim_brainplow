@@ -18,8 +18,6 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "styles": [
         "styles.scss",
         "../node_modules/sweetalert2/dist/sweetalert2.css",
@@ -71,21 +69,6 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "scripts": [],
-=======
-=======
->>>>>>> 5bd8bb26a39218de067a253b34d0bedfeaacb427
-      "styles": [        
-      "../node_modules/bootstrap/dist/css/bootstrap.min.css",    
-        "styles.css"      ],    
-      "scripts": [       
-       "../node_modules/jquery/dist/jquery.min.js",     
-       "../node_modules/popper.js/dist/popper.min.js",       
-      "../node_modules/bootstrap/dist/js/bootstrap.min.js"  
-        ],
-<<<<<<< HEAD
->>>>>>> 5bd8bb26a39218de067a253b34d0bedfeaacb427
-=======
->>>>>>> 5bd8bb26a39218de067a253b34d0bedfeaacb427
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
