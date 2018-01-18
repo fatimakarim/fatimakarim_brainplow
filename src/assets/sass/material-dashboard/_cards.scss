@@ -382,7 +382,7 @@
     }
 
     [data-background-color="rose"]{
-        background: linear-gradient(60deg, $pink-400, $pink-600);
+        // background: linear-gradient(60deg, $pink-400, $pink-600);
         @include shadow-big-color($brand-rose);
     }
 

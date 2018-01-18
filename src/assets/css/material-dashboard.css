@@ -8179,22 +8179,28 @@ footer {
   .card [data-icon-bg-color="blue"] i {
     color: #00bcd4; }
   .card [data-background-color="green"] {
+    /* background: linear-gradient(#25B7D3,#25B7D3,#25B7D3); */
     background: linear-gradient(60deg, #66bb6a, #43a047);
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4); }
   .card [data-icon-bg-color="green"] i {
     color: #4caf50; }
   .card [data-background-color="orange"] {
+    background: linear-gradient(#25B7D3,#25B7D3,#25B7D3);
     background: linear-gradient(60deg, #ffa726, #fb8c00);
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4); }
   .card [data-icon-bg-color="orange"] i {
     color: #ff9800; }
   .card [data-background-color="red"] {
+    /* background: linear-gradient(#25B7D3,#25B7D3,#25B7D3); */
+
     background: linear-gradient(60deg, #ef5350, #e53935);
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(244, 67, 54, 0.4); }
   .card [data-icon-bg-color="red"] i {
     color: #f44336; }
   .card [data-background-color="rose"] {
-    background: linear-gradient(60deg, #ec407a, #d81b60);
+    
+    background: linear-gradient(#33DCFF,#33DCFF,#33DCFF);
+    /* background: linear-gradient(#25B7D3,#25B7D3,#25B7D3); */
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4); }
   .card [data-icon-bg-color="rose"] i {
     color: #e91e63; }

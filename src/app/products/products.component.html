@@ -14,7 +14,10 @@
                                 </div>
                             </div>
                             <div class="card-content">
-                                <div class="col-sm-6 plan-detail">
+                                    <div class="col-sm-3 col-sm-3 col-xs-5  plan-detail">
+                                            <p><img src="{{data.profile_logo}}"/></p>
+                                        </div>
+                                <div class="col-sm-3 col-sm-3 col-xs-5 rate plan-detail">
                                     <p>{{data.plan_information}}</p>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-5 rate">
@@ -56,7 +59,7 @@
                                     <h5>Plan Documents</h5>
                                     <ul class="list-normal">
                                         <li>
-                                            <a routerLink="" href="{{data.terms_of_service}}" target="_blank">
+                                            <a  href="{{data.terms_of_service}}" target="_blank">
                                                 <i class="material-icons">picture_as_pdf</i>
                                                 ToS Agreement
                                             </a>
